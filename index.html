@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<!--jQuery-->
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+	<canvas class="myCanvas clickable" width="640" height="640" id="canvasID"></canvas>
+
+</body>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		createCanvas();
+	});
+
+	var c = document.querySelector(".myCanvas");
+
+
+	//get canvas
+	function createCanvas() {
+
+			var hex = ["#247BA0", "#70C1B3", "#B2DBBF", "#F3FFBD", "#FF1654", "#FDFFFC", "#2EC4B6", "#FF9F1C", "#E71D36", "#E63946", "#F1FAEE", "#A8DADC", "#457B9D", "#1D3557", "#2B2D42", "#8D99AE", "#EDF2F4", "#EF233C", "#D90429", "#6699CC", "#FFF275","#FF8C42","#FF3C38","#A23E48","#1A535C","#4ECDC4","#F7FFF7","#FF6B6B","#FFE66D", "#06AED5", "#086788", "#F0C808", "#FFF1D0", "#DD1C1A"]
+
+			var c = document.querySelector(".myCanvas");
+
+            var ctx = c.getContext("2d"); //ctx is the context
+
+			//makes background white
+			ctx.fillStyle = white;
+			ctx.fillRect(0, 0, c.width, c.height);
+
+
+            var prevX = 100, prevY = 50;
+
+			var points = Math.floor(Math.random()*100+20);
+
+            // ctx.beginPath();
+            for (var i = 0; i < points; i++){
+
+                var x = Math.floor(Math.random()*640);
+                var y = Math.floor(Math.random()*640);
+            	var color = hex[Math.floor(Math.random()*hex.length)]
+
+            	// drawLine(x, y, color);
+
+				ctx.lineWidth = Math.random()*20;
+
+            	ctx.strokeStyle = color;
+            	ctx.beginPath();
+            	ctx.moveTo(prevX,prevY); //moves the origin
+            	ctx.lineTo(x,y); //go to the bottom right corner
+
+            	ctx.stroke();
+            	prevX = x;
+            	prevY = y;
+
+            }
+
+            function drawLine(x, y, color) {
+
+            	ctx.strokeStyle = color;
+            	ctx.beginPath();
+            	ctx.lineTo(x,y); //go to the bottom right corner
+
+            	ctx.stroke();
+
+            }
+
+
+	}//create canvas
+
+
+
+
+
+
+</script>
+
+</html>
