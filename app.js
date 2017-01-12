@@ -1,4 +1,4 @@
-var imagePath = "/Users/leondo/Desktop/canvas101/1.png"
+var imagePath = "/Users/leondo/Desktop/Instagram-Bot-Art/1.png"
 var username = '';
 var password = '';
 var caption = '';
