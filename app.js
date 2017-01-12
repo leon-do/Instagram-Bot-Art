@@ -27,7 +27,7 @@ casper.start();
 
 getImage();
 function getImage(){
-    casper.thenOpen('https://leon-do.github.io/canvas101/')
+    casper.thenOpen('https://leon-do.github.io/Instagram-Bot-Art/')
 
     casper.reload();
 
